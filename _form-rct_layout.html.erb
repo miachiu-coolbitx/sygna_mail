@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>React - CDN ver.</title>
+    <%= render :partial => "link-rct" %>
+</head>
+
+<body>
+    <!-- <header id="header" role="banner">
+        <%= render :partial => "header" %>
+    </header> -->
+    <div id="main">
+        <%= yield %>
+    </div>
+    <script type="text/babel">
+        ReactDOM.render(
+          <h1>Hello, world!</h1>,
+          document.getElementById('hello')
+        );
+        class App extends React.Component {
+          render() {
+            return <h2>Hello, I'm here</h2>
+          }
+        }
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    <script type="text/babel">
+    </script>
+</body>
+</html>

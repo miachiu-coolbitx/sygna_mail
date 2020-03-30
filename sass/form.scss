@@ -1,0 +1,274 @@
+@import "settings";
+@import "mixin";
+@import "compass/css3";
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $font-n;
+    font-weight: normal;
+    font-size: 12px;
+    letter-spacing: normal;
+    color: $body-color;
+}
+
+a {
+    color: $link;
+    @include transition(0.5s);
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $sec-color;
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $title;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: $font-o;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $l-gray;
+    font-size: 14px;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $l-gray;
+    font-size: 14px;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $l-gray;
+    font-size: 14px;
+}
+
+.btn {
+    min-width: 160px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: $font-o;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    @include border-radius(4px);
+    @include transition(all 0.5s ease-in-out);
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+
+    &.btn-primary {
+        background-color: $main-color;
+        color: white !important;
+
+        &:hover,
+        &:active {
+            color: $sec-color !important;
+            background-color: lighten($main-color, 10%) !important;
+        }
+    }
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    padding: 30px 0 0;
+
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+        border-bottom: 7px solid $main-color;
+    }
+
+    .logo {
+        display: inline-block;
+        margin-bottom: 6px;
+        max-width: 165px;
+    }
+}
+
+.content {
+    background: white;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: $screen-sm) {
+        max-width: 580px;
+    }
+}
+
+.container {
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: $screen-xs) {
+        max-width: 580px;
+    }
+}
+
+#main {
+    .intro {
+        padding: 30px 0 20px;
+
+        .title {
+            font-size: 18px;
+            margin-bottom: 0;
+            color: $title;
+            line-height: 24px;
+            font-weight: bold;
+        }
+    }
+
+    form#registration_form {
+        .input-field {
+            margin: 0 0 10px 0;
+
+            label {
+                position: relative;
+                color: $title;
+                font-size: 16px;
+                font-family: $font-o;
+                font-weight: 600;
+                letter-spacing: normal;
+            }
+
+            span {
+                color: $form-span;
+                font-family: $font-o;
+                font-size: 10px;
+                margin-bottom: 10px;
+
+                &:not(.helper-text) {
+                    display: block;
+                }
+            }
+
+            input {
+                font-size: 14px;
+                border-color: $g-blue;
+                height: 1.53rem;
+                margin: 0;
+
+                &.valid,
+                &.invalid,
+                &:active,
+                &:focus {
+                    border: none;
+                }
+            }
+
+            .select-wrapper input.select-dropdown {
+                margin-top: 10px;
+                height: 3rem;
+                font-size: 15px;
+                color: $title;
+                font-weight: 600;
+                padding: 8px 16px 12px;
+                @include border-radius(4px);
+                border: 1px solid $g-blue;
+                background-color: $l-blue;
+                box-sizing: border-box;
+            }
+
+            .select-wrapper .caret {
+                right: 16px;
+                width: 20px;
+                height: 20px;
+                z-index: 1;
+            }
+
+            &.required {
+                label:after {
+                    content: "*";
+                    color: $red;
+                }
+            }
+        }
+
+        .info {
+            padding: 15px;
+            margin-top: 20px;
+            border: dashed 1px $main-color;
+            color: $black;
+
+            h4 {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 0;
+            }
+
+            p {
+                font-size: 10px;
+                font-weight: 300;
+                margin: 0;
+            }
+        }
+
+        .cta_block {
+            padding: 20px 0 30px;
+
+            .text {
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .cta {
+                text-align: center;
+
+                .btn {
+                    position: relative;
+                    display: inline-block;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    box-shadow: none;
+                    height: auto;
+
+                    span {
+                        display: inline-block;
+                        min-width: 219px;
+                    }
+                }
+            }
+        }
+    }
+}

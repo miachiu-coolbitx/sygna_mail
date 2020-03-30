@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration form - Sygna Bridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Webfonts -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="stylesheets/form.css">
+</head>
+
+<body>
+    <div class="content" id="form_reg">
+        <header id="header" role="banner">
+            <div class="container">    
+    <div class="logo">
+        <img src="images/logo.png" alt="SYGNA Bridge">
+    </div>
+</div>
+        </header>
+        <div id="main">
+            <div class="container" id="app">
+    <!-- INTRO text -->
+    <intro></intro>
+    <!-- REGISTRATION form -->
+    <!-- 可循環 -->
+    <form action="" class="" id="registration_form">
+        <!-- Company Name -->
+        <div class="input input-field" v-for="input in inputs" v-bind:class="{ 'required': input.status }">
+            <label :for="input.title">{{input.title}}</label>
+            <span>{{input.description}}</span>
+            <input :id="input.title" type="email" class="validate" :placeholder="placeholder">
+            <span class="helper-text" data-error="wrong">{{input.helpertxt}}</span>
+        </div>
+        <!-- Company Name -->
+        <!-- <div class="input-field required">
+            <label for="vasp_code">VASP Code Name</label>
+            <span>4 uppercase letters to represent your company name. Example: "Coinbase exchange" could be "CBSE", "Sygna" could be "SYGN"</span>
+            <input id="vasp_code" type="text" class="validate" placeholder="Input VASP Code Name">
+            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+        </div> -->
+    </form>
+    <!-- 可循環 -->
+    <!-- KEY PAIR -->
+    <div class="info">
+        <h4>
+            Key pair generation
+        </h4>
+        <p>
+            This short guide will help you to generate a key pair via the OpenSSL command line tool, in order to provide
+            the public key to Bridge.
+            <br><br>
+            Generate an EC private key, of size 256, and output it to a file named key.pem:
+            >> $ openssl ecparam -name secp256k1 -genkey -out key.pem
+            <br><br>
+            Extract the public key from the key pair, which can be used in the encryption:
+            >> $ openssl ec -in key.pem -pubout -out public.pem
+            <br><br>
+            After running these two commands you will generate two files: key.pem and public.pem in your working
+            directory. Please provide us with the public.pem
+            key.pem is referenced in the creation of a digital signature on the message. Please take care not to expose
+            the private key. Ensure that you only do so on a system you consider to be secure.
+        </p>
+    </div>
+    <!-- CTA block -->
+    <div class="cta_block">
+        <p class="text">
+            If you have any questions with the information in this email, please let us know at
+            <a href="mailto:contact@sygna.io">contact@sygna.io</a> or visit our website.
+        </p>
+        <div class="cta">
+            <a href="#" class="btn btn-primary" target="_blank">
+                <span>For More Information, Visit Us At Sygna.Io</span>
+            </a>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    <script type="text/x-template" id="component">
+    <div class="intro">
+        <h2 class="title">{{title}}</h2>
+    </div>
+</script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="js/app.js"></script>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration form - Sygna Bridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Webfonts -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Open+Sans:400,600,700&display=swap"
+        rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="stylesheets/form.css">
+</head>
+
+<body>
+    <div class="content">
+        <header id="header" role="banner">
+            <div class="container">    
+    <div class="logo">
+        <img src="images/logo.png" alt="SYGNA Bridge">
+    </div>
+</div>
+        </header>
+        <div id="main">
+            <div class="container">
+    <!-- INTRO text -->
+    <div class="intro">
+        <h2 class="title">
+            Welcome to Sygna Bridge VASP Registration
+        </h2>
+    </div>
+    <!-- REGISTRATION form -->
+    <form action="" class="" id="registration_form">
+        <!-- Email Address -->
+        <div class="input-field required">
+            <label for="email">Email Address</label>
+            <span>Your valid email address.</span>
+            <input id="email" type="email" class="validate" placeholder="Input mail address">
+        </div>
+        <!-- Company Name -->
+        <div class="input-field required">
+            <label for="company">Company Name</label>
+            <span>Your registered company name. Example: "VASP LTD."</span>
+            <input id="company" type="text" class="validate" placeholder="Your company name">
+        </div>
+        <!-- VASP Code Name -->
+        <div class="input-field required">
+            <label for="vasp_code">VASP Code Name</label>
+            <span>4 uppercase letters to represent your company name. Example: "Coinbase exchange" could be "CBSE",
+                "Sygna" could be "SYGN"</span>
+            <input id="vasp_code" type="text" class="validate" placeholder="Input VASP code Name">
+        </div>
+        <!-- Country Code -->
+        <div class="input-field required">
+            <label>Country Code</label>
+            <span>Country location of your company jurisdiction. Please follow ISO 3166-1 alpha-2 country code.</span>
+            <select class="validate" id="country_code" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </div>
+        <!-- City Code -->
+        <div class="input-field required">
+            <label for="city_code">City Code</label>
+            <span>2 letters city abbreviation. Example: "NY"</span>
+            <input id="city_code" type="text" class="validate" placeholder="Input city code">
+        </div>
+        <!-- Company ID -->
+        <div class="input-field">
+            <label for="company_id">Company ID</label>
+            <span>Company registration code under local jurisdiction.</span>
+            <input id="company_id" type="text" class="validate" placeholder="Input company ID">
+        </div>
+        <!-- VASP Category -->
+        <div class="input-field required">
+            <label>VASP Category</label>
+            <select class="validate" id="vasp_category" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </div>
+        <!-- VASP API -->
+        <div class="input-field required">
+            <label for="vasp_api">Beneficiary VASP API endpoint URL</label>
+            <span>API endpoint for beneficiary VASP to receive API request from Bridge Server
+                (<a href="http://bit.ly/2NhZUlS">http://bit.ly/2NhZUlS</a>).
+                Example: "beneficiary.example/api/v1/bridge/transaction/permission-request"</span>
+            <input id="vasp_api" type="text" class="validate" placeholder="Input beneficiary VASP API endpoint URL">
+        </div>
+        <!-- IP Address -->
+        <div class="input-field">
+            <label for="ip_address">Fixed static IP Address</label>
+            <span>To create a secure communication tunnel between Bridge and VASP servers,
+                Bridge can register VASP server static IP for identification. (optional)</span>
+            <input id="ip_address" type="text" class="validate" placeholder="Input fixed static IP address">
+        </div>
+        <!-- Go-Live Date -->
+        <div class="input-field">
+            <label for="go_live">Go-Live Date</label>
+            <span>Default date: three days after the registration is done.</span>
+            <input id="go_live" type="text" class="validate" placeholder="YY/MM/DD 00:00">
+        </div>
+        <!-- VASP API -->
+        <div class="input-field required">
+            <label for="vasp_key">VASP Public Key</label>
+            <span>For other VASPs to encrypt private information. Please see Key pair generation for more
+                details.</span>
+            <input id="vasp_key" type="text" class="validate" placeholder="Your VASP public key">
+        </div>
+        <!-- KEY PAIR -->
+        <div class="info">
+            <h4>
+                Key pair generation
+            </h4>
+            <p>
+                This short guide will help you to generate a key pair via the OpenSSL command line tool, in order to provide
+                the public key to Bridge.
+                <br><br>
+                Generate an EC private key, of size 256, and output it to a file named key.pem:
+                >> $ openssl ecparam -name secp256k1 -genkey -out key.pem
+                <br><br>
+                Extract the public key from the key pair, which can be used in the encryption:
+                >> $ openssl ec -in key.pem -pubout -out public.pem
+                <br><br>
+                After running these two commands you will generate two files: key.pem and public.pem in your working
+                directory. Please provide us with the public.pem
+                key.pem is referenced in the creation of a digital signature on the message. Please take care not to expose
+                the private key. Ensure that you only do so on a system you consider to be secure.
+            </p>
+        </div>
+        <!-- CTA block -->
+        <div class="cta_block">
+            <p class="text">
+                If you have any questions with the information in this email, please let us know at
+                <a href="mailto:contact@sygna.io">contact@sygna.io</a> or visit our website.
+            </p>
+            <div class="cta">
+                <input type="submit" name="" value="Submit" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('select').formSelect();
+    });
+</script>
+
+</html>

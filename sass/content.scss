@@ -1,0 +1,101 @@
+@import "settings"; 
+@import "mixin";
+@import "compass/css3";
+@import "header";
+@import "footer";
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $font-n;
+    font-weight: normal;
+    font-size: 12px;
+    letter-spacing: normal;
+    color: $body-color;
+}
+
+a {
+    color: $link;
+    @include transition(0.5s);
+    &:hover, &:active, &:focus {
+        color: $sec-color;
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $title;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: $font-o;
+}
+
+@import "button";
+
+.content {
+    background: white;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#main {
+    .text {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+    .intro {
+        padding: 30px 0 20px;
+        .title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: $title;
+            line-height: 24px;
+            font-weight: bold;
+        }
+    }
+    .cta_block {
+        padding: 20px 0 30px;
+        .text {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .cta {
+            text-align: center;
+            .btn {
+                position: relative;
+                display: inline-block;
+                text-decoration: none;
+                text-transform: capitalize;
+                box-shadow: none;
+                height: auto;
+                span {
+                    display: inline-block;
+                    min-width: 219px;
+                }
+            }
+        }
+    }
+}

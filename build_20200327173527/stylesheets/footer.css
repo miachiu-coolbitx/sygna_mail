@@ -1,0 +1,32 @@
+/* line 3, ../sass/footer.scss */
+#footer {
+  padding: 21px 0 24px;
+  background: #104935;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* line 8, ../sass/footer.scss */
+#footer p {
+  margin-bottom: 0;
+  font-size: 9px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+/* line 15, ../sass/footer.scss */
+#footer .soc_icons ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+/* line 19, ../sass/footer.scss */
+#footer .soc_icons ul li {
+  display: inline-block;
+}
+/* line 21, ../sass/footer.scss */
+#footer .soc_icons ul li:not(:last-of-type) {
+  padding-right: 15px;
+}
+/* line 24, ../sass/footer.scss */
+#footer .soc_icons ul li a > img {
+  width: 15px;
+}

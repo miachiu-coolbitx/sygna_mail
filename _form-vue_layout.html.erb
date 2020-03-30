@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration form - Sygna Bridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Webfonts -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="stylesheets/form.css">
+</head>
+
+<body>
+    <div class="content" id="form_reg">
+        <header id="header" role="banner">
+            <%= render :partial => "header" %>
+        </header>
+        <div id="main">
+            <%= yield %>
+        </div>
+    </div>
+    <%= render :partial => "script" %>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="js/app.js"></script>
+</html>
