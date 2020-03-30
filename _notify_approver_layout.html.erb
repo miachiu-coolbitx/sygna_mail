@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Notify Approver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Webfonts -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="stylesheets/index.css?ver=202003200320">
+</head>
+
+<body>
+    <div class="content" id="notification">
+        <header id="header" role="banner">
+            <%= render :partial => "header" %>
+        </header>
+        <div id="main">
+            <%= yield %>
+        </div>
+        <footer id="footer">
+            <%= render :partial => "footer" %>
+        </footer>
+    </div>
+</body>
+
+</html>

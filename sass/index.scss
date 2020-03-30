@@ -35,9 +35,11 @@
                     h3 {
                         margin-bottom: 0;
                         color: $title;
+                        font-size: 16px;
+                        font-weight: 600;
                     }
                     span {
-                        font-size: 10px;
+                        font-size: 12px;
                         color: $l-gray;
                         word-break: break-all;
                         font-family: $font-o;
@@ -49,15 +51,21 @@
                     color: $black !important;
                     font-size: 14px !important;
                     font-weight: normal !important;
-                    #copytxt {
-                        display: block;
-                        width: 100% !important;
+                    .copytxt {
+                        display: inline-block;
+                        width: auto;
                         height: 100% !important;
                         padding: 5px 10px;
                         border: 1px solid $blue !important;
                         background: $l-blue !important;
                         word-break: break-all;
                         text-align: center;
+                        &#api_key {
+                            width: 100% !important;
+                        }
+                    }
+                    .d-block {
+                        display: block;
                     }
                 }
             }
